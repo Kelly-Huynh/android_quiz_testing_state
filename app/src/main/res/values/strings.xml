@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Quiz</string>
     <string name="question">What is the capital city of Australia?</string>
+    <string name="answer">Canberra</string>
+    <string name="correct_answer_result">Correct!</string>
+    <string name="incorrect_answer_result">Try again!</string>
     <string name="text_field">Enter your answer here</string>
     <string name="button_label">Submit Answer</string>
 </resources>

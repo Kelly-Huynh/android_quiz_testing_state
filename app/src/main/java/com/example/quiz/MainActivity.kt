@@ -52,6 +52,10 @@ fun QuizLayout() {
     var currentText by remember {
         mutableStateOf("")
     }
+    var resultText by remember { mutableStateOf("") }
+    val correctAnswer = stringResource(R.string.answer)
+    val correctMessage = stringResource(R.string.correct_answer_result)
+    val incorrectMessage = stringResource(R.string.incorrect_answer_result)
     Column (
         modifier = Modifier
             .statusBarsPadding()
@@ -74,12 +78,20 @@ fun QuizLayout() {
                 .fillMaxWidth()
         )
         Button(onClick = {
-            println("Button was clicked!")
+            if (currentText.equals(correctAnswer, ignoreCase = true)) {
+                resultText = correctMessage
+            } else {
+                resultText = incorrectMessage
+            }
         }) {
             Text(
                 text = stringResource(R.string.button_label)
             )
         }
+        Text(
+            text = resultText,
+            modifier = Modifier.padding(top = 16.dp)
+        )
     }
 }
 
